@@ -44,7 +44,7 @@ public class NAS_1_ej1 {
                 break;
 
             case "rectangulo":
-                System.out.println("Introduce su área y su altura");
+                System.out.println("Introduce su base y su altura");
                 area_triangulo_general(sc.nextDouble(), sc.nextDouble());
                 break;
         }
