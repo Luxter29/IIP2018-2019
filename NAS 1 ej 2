@@ -1,0 +1,57 @@
+package sample;
+import java.util.*;
+
+public class Triangulo {
+    //PROPIEDADES:
+    private double lado1;
+    private double lado2;
+    private double lado3;
+    private String tipo;
+    //CONSTRUCTOR:
+    public Triangulo(double l1, double l2, double l3, String s) {
+        this.lado1 = l1;
+        this.lado2 = l2;
+        this.lado3 = l3;
+        this.tipo = s;
+    }
+    //MÉTODO:
+    public double area(String tri) {
+        double sol;
+        tri.toLowerCase();
+        switch (tri) {
+            case "equilatero":
+                sol = (Math.pow(this.lado1, 2) * Math.sqrt(3)) / 4;
+                break;
+            case "isosceles":
+                if(this.lado1 != this.lado2 && this.lado1 != this.lado3) {
+                    sol = (this.lado1 / 2) * Math.sqrt(Math.pow(this.lado2, 2) - Math.pow(this.lado1 / 2, 2));
+                }
+                else if(this.lado2 != this.lado1 && this.lado2 != this.lado3) {
+                    sol = (this.lado2 / 2) * Math.sqrt(Math.pow(this.lado1, 2) - Math.pow(this.lado2 / 2, 2));
+                } 
+                else {
+                    sol = (this.lado3 / 2) * Math.sqrt(Math.pow(this.lado2, 2) - Math.pow(this.lado3 / 2, 2));
+                }
+                break;
+            case "escaleno":
+                double s = (this.lado1 + this.lado2 + this.lado3) / 2;
+                sol = Math.sqrt(s * (s - this.lado1) * (s - this.lado2) * (s - this.lado3));
+                break;
+            case "rectangulo":
+                if(this.lado1 > this.lado2 && this.lado1 > this.lado3) {
+                    sol = this.lado2 * this.lado3 / 2;
+                }
+                else if(this.lado2 > this.lado1 && this.lado2 > this.lado3) {
+                    sol = this.lado1 * this.lado3 / 2;
+                } 
+                else {
+                    sol = this.lado1 * this.lado2 / 2;
+                }
+                break;
+            default: 
+                sol = -1;
+                break;
+        }
+        return sol;
+    }    
+}
