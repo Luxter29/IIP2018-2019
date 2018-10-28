@@ -2,21 +2,21 @@ package sample;
 import java.util.*;
 
 public class NAS_1_ej1 {
-    private static void area_equilatero(double altura){
+    private static void area_equilatero(double altura) {
         double area = Math.sqrt(3)/4 * (Math.pow(altura, 2));
         System.out.println(area);
     }
-    private static void area_isosceles(double cateto, double base){
+    private static void area_isosceles(double cateto, double base) {
         double altura = Math.sqrt(Math.pow(cateto, 2) - ((Math.pow(base, 2))/4));
         double area = (base*altura)/2;
         System.out.println(area);
     }
-    private static void area_escaleno_heron(double hipotenusa, double cateto1, double cateto2){
+    private static void area_escaleno_heron(double hipotenusa, double cateto1, double cateto2) {
         double semiperimetro = (cateto1 + cateto2 + hipotenusa)/2;
         double area = Math.sqrt(semiperimetro*(semiperimetro-cateto1)*(semiperimetro-cateto2)*(semiperimetro-hipotenusa));
         System.out.println(area);
     }
-    private static void area_triangulo_general(double base, double altura){
+    private static void area_triangulo_general(double base, double altura) {
         double area = (base*altura)/2;
         System.out.println(area);
     }
@@ -27,7 +27,7 @@ public class NAS_1_ej1 {
         String str =sc.nextLine();
         str.toLowerCase();
 
-        switch (str){
+        switch (str) {
             case "equilatero":
                 System.out.println("Introduce su altura:");
                 area_equilatero(sc.nextDouble());
